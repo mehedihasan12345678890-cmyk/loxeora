@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff4f7">
+  <meta name="description" content="LOXEORA — Makeup, skincare and beauty essentials. Discover your glow.">
+  <title>LOXEORA | Beauty & Skincare Store</title>
+  <style>
+    :root{--pink:#d94f83;--deep:#8f3158;--soft:#fff1f6;--ink:#30242a;--muted:#786b71;--line:#f0dce5;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;color:var(--ink);background:#fff}
+    a{color:inherit;text-decoration:none} button{font:inherit;cursor:pointer}
+    .top{background:var(--deep);color:white;text-align:center;padding:9px 14px;font-size:13px;letter-spacing:.3px}
+    header{position:sticky;top:0;z-index:5;background:#ffffffed;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{max-width:1160px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .logo{font-family:Georgia,serif;font-size:30px;font-weight:bold;letter-spacing:3px;color:var(--deep)}
+    .logo small{display:block;font:10px Arial,sans-serif;letter-spacing:4px;text-align:center;color:#a8798d;margin-top:1px}
+    nav{display:flex;gap:26px;color:#594850;font-size:14px} nav a:hover{color:var(--pink)}
+    .nav-cta,.primary{background:var(--pink);color:#fff;border:0;border-radius:30px;padding:12px 20px;font-weight:700;box-shadow:0 8px 20px #d94f8326}
+    .hero{background:linear-gradient(110deg,#fff1f6 0%,#fff8fa 55%,#fbe3ed 100%);overflow:hidden}
+    .hero-inner{max-width:1160px;margin:auto;min-height:430px;padding:64px 22px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:28px}
+    .eyebrow{color:var(--pink);font-size:12px;font-weight:bold;letter-spacing:3px;text-transform:uppercase}
+    h1{font:clamp(42px,6vw,70px)/1.05 Georgia,serif;margin:18px 0;color:#56283d}
+    .hero p{max-width:470px;line-height:1.8;color:#725d67}
+    .hero-actions{display:flex;gap:12px;align-items:center;margin-top:25px;flex-wrap:wrap}
+    .secondary{border:1px solid #d9a9bd;color:var(--deep);background:transparent;border-radius:30px;padding:11px 19px;font-weight:700}
+    .hero-art{min-height:300px;border-radius:48% 48% 18px 18px;background:radial-gradient(circle at 50% 38%,#fff 0 15%,transparent 16%),linear-gradient(145deg,#f4c6d7,#e58eaf);display:grid;place-items:center;position:relative;box-shadow:inset 0 0 0 12px #ffffff55}
+    .hero-art:before{content:"G";font:italic 190px Georgia,serif;color:#fff9;text-shadow:0 8px 30px #a73b6840}
+    .hero-note{position:absolute;bottom:24px;background:#fffdf8eF;color:var(--deep);padding:12px 18px;border-radius:30px;font:italic 15px Georgia}
+    .section{max-width:1160px;margin:auto;padding:62px 22px}
+    .section-head{text-align:center;margin-bottom:30px}.section-head h2{font:36px Georgia,serif;color:#56283d;margin:9px 0}.section-head p{color:var(--muted);font-size:14px}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .card{border:1px solid var(--line);border-radius:17px;overflow:hidden;background:white;transition:.2s;box-shadow:0 8px 24px #67324a08}
+    .card:hover{transform:translateY(-4px);box-shadow:0 14px 28px #67324a14}
+    .photo{height:190px;display:grid;place-items:center;font-size:65px;background:linear-gradient(145deg,#fff0f5,#f7dce7)}
+    .card:nth-child(2) .photo{background:linear-gradient(145deg,#f8e8dc,#f0c9bd)}
+    .card:nth-child(3) .photo{background:linear-gradient(145deg,#f4e9f8,#dfc9e9)}
+    .card:nth-child(4) .photo{background:linear-gradient(145deg,#f9efd9,#eed9a8)}
+    .card-body{padding:16px}.tag{font-size:10px;letter-spacing:1.5px;color:var(--pink);font-weight:bold}
+    .card h3{font:20px Georgia,serif;margin:8px 0}.desc{font-size:12px;color:var(--muted);min-height:30px}
+    .price{font-weight:bold;color:var(--deep);margin:12px 0}
+    .buyrow{display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:22px;overflow:hidden}
+    .qty button{border:0;background:var(--soft);color:var(--deep);width:30px;height:32px;font-size:18px}
+    .qty span{min-width:28px;text-align:center;font-size:13px}
+    .order{border:0;border-radius:22px;background:#268b63;color:white;padding:9px 12px;font-size:12px;font-weight:bold}
+    .benefits{background:var(--soft)}.benefit-grid{max-width:1100px;margin:auto;padding:32px 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+    .benefit-grid strong{display:block;color:var(--deep);margin:9px}.benefit-grid span{font-size:13px;color:var(--muted)}
+    footer{background:#402432;color:#fbeaf1;padding:36px 22px;text-align:center}
+    footer .logo{color:#fff}footer p{font-size:13px;color:#e3cbd5;line-height:1.7}
+    .wa-float{position:fixed;right:18px;bottom:18px;z-index:6;border:0;border-radius:30px;background:#218b61;color:#fff;padding:13px 18px;box-shadow:0 8px 25px #0002;font-weight:bold}
+    .notice{max-width:900px;margin:0 auto 25px;padding:13px 16px;background:#fff8e9;border:1px solid #f2dfb5;border-radius:12px;color:#705b32;font-size:13px;line-height:1.6}
+    @media(max-width:800px){nav{display:none}.hero-inner{grid-template-columns:1fr;padding-top:48px}.hero-art{min-height:220px}.products{grid-template-columns:repeat(2,1fr)}.photo{height:155px}.benefit-grid{grid-template-columns:1fr}}
+    @media(max-width:430px){.nav{padding:12px 16px}.logo{font-size:25px}.nav-cta{padding:10px 13px;font-size:12px}.section{padding:45px 14px}.products{gap:11px}.card-body{padding:11px}.card h3{font-size:17px}.buyrow{align-items:flex-start;flex-direction:column}.order{width:100%}.photo{height:130px}}
+  </style>
+</head>
+<body>
+  <div class="top">✨ আপনার পছন্দের স্টাইল, এখন এক জায়গায় — LOXEORA</div>
+  <header>
+    <div class="nav">
+      <a class="logo" href="#">LOXEORA<small>BEAUTY • SKINCARE • YOU</small></a>
+      <nav><a href="#home">হোম</a><a href="#products">পণ্য</a><a href="#about">আমাদের সম্পর্কে</a></nav>
+      <a class="nav-cta" href="#products">Shop Now</a>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">A LITTLE MORE YOU</div>
+          <h1>Discover Your<br><em>Everyday Glam.</em></h1>
+          <p>ফ্যাশন ও বিউটির সুন্দর সব পছন্দ একসঙ্গে। নিজের পছন্দের পণ্য বেছে নিন, পরিমাণ ঠিক করুন, তারপর WhatsApp-এ অর্ডার পাঠান।</p>
+          <div class="hero-actions"><a class="primary" href="#products">এখনই শপিং করুন</a><a class="secondary" href="#about">আরও জানুন</a></div>
+        </div>
+        <div class="hero-art" aria-label="LOXEORA decorative brand artwork"><div class="hero-note">Beauty in Every Touch ♡</div></div>
+      </div>
+    </section>
+    <section class="section" id="products">
+      <div class="section-head"><div class="eyebrow">CURATED FOR YOU</div><h2>Our Lovely Picks</h2><p>নমুনা পণ্য — প্রকাশের আগে নিজের আসল পণ্য ও দাম বসিয়ে নিন</p></div>
+      <div class="notice">দামগুলো শুধু ডেমো। আপনার আসল পণ্যের নাম, ছবি ও দাম দিয়ে পরিবর্তন করুন। WhatsApp অর্ডার চালু করতে অভিভাবকের অনুমোদিত ব্যবসায়িক নম্বর কোডে সেট করতে হবে।</div>
+      <div class="products">
+        <article class="card" data-name="Blush Beauty Set" data-price="850">
+          <div class="photo">🌸</div><div class="card-body"><div class="tag">BEST SELLER</div><h3>Blush Beauty Set</h3><div class="desc">Everyday beauty essentials</div><div class="price">৳ 850</div><div class="buyrow"><div class="qty"><button aria-label="কমাও">−</button><span>1</span><button aria-label="বাড়াও">+</button></div><button class="order">WhatsApp Order</button></div></div>
+        </article>
+        <article class="card" data-name="Rose Glow Care" data-price="650">
+          <div class="photo">🧴</div><div class="card-body"><div class="tag">CUSTOMER FAVOURITE</div><h3>Rose Glow Care</h3><div class="desc">A soft self-care selection</div><div class="price">৳ 650</div><div class="buyrow"><div class="qty"><button aria-label="কমাও">−</button><span>1</span><button aria-label="বাড়াও">+</button></div><button class="order">WhatsApp Order</button></div></div>
+        </article>
+        <article class="card" data-name="Lavender Charm" data-price="720">
+          <div class="photo">👜</div><div class="card-body"><div class="tag">NEW ARRIVAL</div><h3>Lavender Charm</h3><div class="desc">A lovely everyday accessory</div><div class="price">৳ 720</div><div class="buyrow"><div class="qty"><button aria-label="কমাও">−</button><span>1</span><button aria-label="বাড়াও">+</button></div><button class="order">WhatsApp Order</button></div></div>
+        </article>
+        <article class="card" data-name="Golden Hour Set" data-price="990">
+          <div class="photo">✨</div><div class="card-body"><div class="tag">LOXEORA PICK</div><h3>Golden Hour Set</h3><div class="desc">A little sparkle for your day</div><div class="price">৳ 990</div><div class="buyrow"><div class="qty"><button aria-label="কমাও">−</button><span>1</span><button aria-label="বাড়াও">+</button></div><button class="order">WhatsApp Order</button></div></div>
+        </article>
+      </div>
+    </section>
+    <section class="benefits" id="about"><div class="benefit-grid">
+      <div>♡<strong>Carefully Selected</strong><span>আপনার জন্য বেছে নেওয়া পণ্য</span></div>
+      <div>✧<strong>Easy Ordering</strong><span>সহজ WhatsApp অর্ডার ব্যবস্থা</span></div>
+      <div>❀<strong>Here for You</strong><span>প্রয়োজনে আমাদের সঙ্গে যোগাযোগ করুন</span></div>
+    </div></section>
+  </main>
+  <footer><div class="logo">LOXEORA</div><p>Shop Smart, Shop LOXEORA ♡<br>Makeup • Skincare • Beauty Essentials</p><small>© <span id="year"></span> LOXEORA. All rights reserved.</small></footer>
+  <button class="wa-float" id="contactBtn">☏ WhatsApp</button>
+  <script>
+    // নিরাপত্তার জন্য এখানে ব্যক্তিগত নম্বর দেওয়া নেই।
+    // অভিভাবকের অনুমোদিত ব্যবসায়িক নম্বর আন্তর্জাতিক ফরম্যাটে বসান,
+    // যেমন বাংলাদেশের নম্বর হলে 8801XXXXXXXXX (শুরুর 0 বাদ দিয়ে)।
+    const BUSINESS_WHATSAPP_NUMBER = "";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.querySelectorAll(".card").forEach(card => {
+      const qtyText = card.querySelector(".qty span");
+      let qty = 1;
+      const buttons = card.querySelectorAll(".qty button");
+      buttons[0].addEventListener("click", () => { qty = Math.max(1, qty - 1); qtyText.textContent = qty; });
+      buttons[1].addEventListener("click", () => { qty = Math.min(99, qty + 1); qtyText.textContent = qty; });
+      card.querySelector(".order").addEventListener("click", () => {
+        const name = card.dataset.name, price = Number(card.dataset.price);
+        sendWhatsApp(`আসসালামু আলাইকুম, আমি LOXEORA থেকে অর্ডার করতে চাই।\nপণ্য: ${name}\nদাম: ৳${price}\nপরিমাণ: ${qty}\nমোট: ৳${price * qty}`);
+      });
+    });
+    function sendWhatsApp(message) {
+      if (!/^8801\d{9}$/.test(BUSINESS_WHATSAPP_NUMBER)) {
+        alert("WhatsApp অর্ডার চালু করতে অভিভাবকের অনুমোদিত ব্যবসায়িক নম্বর ওয়েবসাইটের কোডে সেট করতে হবে।");
+        return;
+      }
+      window.open("https://wa.me/" + BUSINESS_WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message), "_blank", "noopener");
+    }
+    document.getElementById("contactBtn").addEventListener("click", () => sendWhatsApp("আসসালামু আলাইকুম, LOXEORA সম্পর্কে জানতে চাই।"));
+  </script>
+</body>
+</html>
